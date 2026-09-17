@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/logo.svg" width="140" alt="PAIDBALL" />
+<img src="./assets/logo.png" width="140" alt="PAIDBALL" />
 
 # PAIDBALL
 
@@ -229,7 +229,7 @@ infrastructure. Not affiliated with or endorsed by PAID.</sub>
 
 <br/><br/>
 
-<img src="./assets/logo.svg" width="46" alt="" />
+<img src="./assets/logo.png" width="46" alt="" />
 
 <sub><b>MIT licensed</b> · half of every fee, always.</sub>
 
