@@ -1,0 +1,19 @@
+{
+  "name": "paidball",
+  "version": "0.1.0",
+  "description": "50% to holders. 50% to the recipient. Every trade, every time.",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "simulate": "python3 scripts/simulate_fees.py"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "chai": "^4.4.1",
+    "ethers": "^6.13.0",
+    "typescript": "^5.5.0"
+  }
+}

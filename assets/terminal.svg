@@ -1,0 +1,78 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="Menlo, Consolas, monospace">
+  <defs>
+    <style>
+      .win { fill:#0a0a0a; stroke:#2b2b2b; stroke-width:1; }
+      .bar { fill:#151515; }
+      .dot { r:6; }
+      .line { font-size:15px; fill:#d8d8d8; opacity:0; }
+      .prompt { fill:#00ff9d; }
+      .cmt { fill:#666; }
+      .val { fill:#4fd1ff; }
+      .pink { fill:#ff5fa2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="460" rx="14" class="win"/>
+  <rect x="0" y="0" width="900" height="36" rx="14" class="bar"/>
+  <circle class="dot" cx="22" cy="18" fill="#ff5f56"/>
+  <circle class="dot" cx="44" cy="18" fill="#ffbd2e"/>
+  <circle class="dot" cx="66" cy="18" fill="#27c93f"/>
+  <text x="450" y="23" text-anchor="middle" font-size="12" fill="#888">paidball — zsh</text>
+
+  <g transform="translate(28,70)">
+    <text class="line" y="0">
+      <tspan class="prompt">➜ </tspan><tspan fill="#eee">paidball deploy --token $PAID --split 50/50</tspan>
+      <animate attributeName="opacity" to="1" begin="0.1s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="34">
+      <tspan class="cmt">Resolving PAID / UsePaid launch config...</tspan>
+      <animate attributeName="opacity" to="1" begin="1.0s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="68">
+      <tspan fill="#ccc">✓ token registered   </tspan><tspan class="val">0xA11...F00D</tspan>
+      <animate attributeName="opacity" to="1" begin="1.8s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="102">
+      <tspan fill="#ccc">✓ fee router deployed </tspan><tspan class="val">0xBA11...4A55</tspan>
+      <animate attributeName="opacity" to="1" begin="2.5s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="136">
+      <tspan fill="#ccc">✓ split configured    </tspan><tspan class="val">holders 50%</tspan><tspan fill="#555"> / </tspan><tspan class="pink">recipient 50%</tspan>
+      <animate attributeName="opacity" to="1" begin="3.2s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="180">
+      <tspan class="prompt">➜ </tspan><tspan fill="#eee">paidball watch --live</tspan>
+      <animate attributeName="opacity" to="1" begin="4.1s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="214">
+      <tspan fill="#888">[fee] swap  1.42 SOL  → router  → </tspan><tspan class="val">0.71</tspan><tspan fill="#888"> holders / </tspan><tspan class="pink">0.71</tspan><tspan fill="#888"> recipient</tspan>
+      <animate attributeName="opacity" to="1" begin="4.9s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="248">
+      <tspan fill="#888">[fee] swap  0.86 SOL  → router  → </tspan><tspan class="val">0.43</tspan><tspan fill="#888"> holders / </tspan><tspan class="pink">0.43</tspan><tspan fill="#888"> recipient</tspan>
+      <animate attributeName="opacity" to="1" begin="5.6s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="282">
+      <tspan fill="#888">[fee] swap  3.05 SOL  → router  → </tspan><tspan class="val">1.52</tspan><tspan fill="#888"> holders / </tspan><tspan class="pink">1.52</tspan><tspan fill="#888"> recipient</tspan>
+      <animate attributeName="opacity" to="1" begin="6.3s" fill="freeze" dur="0.1s"/>
+    </text>
+
+    <text class="line" y="326">
+      <tspan class="prompt">➜ </tspan><tspan fill="#666">_</tspan>
+      <animate attributeName="opacity" to="1" begin="7.1s" fill="freeze" dur="0.1s"/>
+    </text>
+  </g>
+
+  <!-- blinking cursor block -->
+  <rect x="46" y="380" width="10" height="16" fill="#00ff9d">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="7.1s" repeatCount="indefinite"/>
+  </rect>
+</svg>

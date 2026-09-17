@@ -1,0 +1,42 @@
+<svg viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg" font-family="Menlo, Consolas, monospace">
+  <defs>
+    <style>
+      .card { fill:#0a0a0a; stroke:#242424; stroke-width:1; }
+      .k { fill:#777; font-size:11px; letter-spacing: 1px; }
+      .v { fill:#fff; font-size:26px; font-weight:800; }
+      .up { fill:#00ff9d; font-size:12px; }
+    </style>
+  </defs>
+  <rect width="1000" height="140" fill="#000"/>
+
+  <g transform="translate(10,10)">
+    <rect width="235" height="120" rx="10" class="card"/>
+    <text x="18" y="30" class="k">FEES ROUTED (24H)</text>
+    <text x="18" y="70" class="v"><tspan>182.4</tspan><tspan fill="#666" font-size="14"> SOL</tspan></text>
+    <text x="18" y="95" class="up">▲ live</text>
+    <circle cx="205" cy="30" r="4" fill="#00ff9d">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g transform="translate(258,10)">
+    <rect width="235" height="120" rx="10" class="card"/>
+    <text x="18" y="30" class="k">SPLIT TO HOLDERS</text>
+    <text x="18" y="70" class="v" fill="#00ff9d">91.2 <tspan fill="#666" font-size="14">SOL</tspan></text>
+    <text x="18" y="95" class="up">exactly 50.00%</text>
+  </g>
+
+  <g transform="translate(506,10)">
+    <rect width="235" height="120" rx="10" class="card"/>
+    <text x="18" y="30" class="k">SPLIT TO RECIPIENT</text>
+    <text x="18" y="70" class="v" fill="#ff5fa2">91.2 <tspan fill="#666" font-size="14">SOL</tspan></text>
+    <text x="18" y="95" class="up" fill="#ff5fa2">exactly 50.00%</text>
+  </g>
+
+  <g transform="translate(754,10)">
+    <rect width="235" height="120" rx="10" class="card"/>
+    <text x="18" y="30" class="k">HOLDERS PAID OUT</text>
+    <text x="18" y="70" class="v">4,812</text>
+    <text x="18" y="95" class="up">wallets, trustlessly</text>
+  </g>
+</svg>

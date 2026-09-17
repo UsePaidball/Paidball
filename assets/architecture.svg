@@ -1,0 +1,85 @@
+<svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" font-family="Menlo, Consolas, monospace">
+  <defs>
+    <style>
+      .node { fill:#0d0d0d; stroke:#3a3a3a; stroke-width:1.5; }
+      .nodeAccent { stroke:#ffffff; }
+      .label { fill:#e8e8e8; font-size:15px; font-weight:600; }
+      .sub { fill:#8a8a8a; font-size:11px; }
+      .pct { fill:#00ff9d; font-size:22px; font-weight:700; }
+      .flow { stroke:#4fd1ff; stroke-width:2.5; fill:none; }
+      .flowB { stroke:#ff5fa2; stroke-width:2.5; fill:none; }
+      .dash { stroke-dasharray: 6 10; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4fd1ff"/>
+    </marker>
+    <marker id="arrowP" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ff5fa2"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="620" fill="#000000"/>
+
+  <!-- TRADER -->
+  <rect x="40" y="270" width="160" height="80" rx="10" class="node nodeAccent"/>
+  <text x="120" y="305" text-anchor="middle" class="label">TRADER</text>
+  <text x="120" y="325" text-anchor="middle" class="sub">buy / sell tx</text>
+
+  <!-- PAID / UsePaid infra -->
+  <rect x="280" y="270" width="200" height="80" rx="10" class="node"/>
+  <text x="380" y="300" text-anchor="middle" class="label">PAID INFRA</text>
+  <text x="380" y="320" text-anchor="middle" class="sub">token launch + fee capture</text>
+  <text x="380" y="336" text-anchor="middle" class="sub">(UsePaid rails)</text>
+
+  <!-- FEE ROUTER -->
+  <rect x="560" y="255" width="220" height="110" rx="10" class="node nodeAccent"/>
+  <text x="670" y="290" text-anchor="middle" class="label">PAIDBALL</text>
+  <text x="670" y="310" text-anchor="middle" class="label">FEE ROUTER</text>
+  <text x="670" y="330" text-anchor="middle" class="sub">on-chain split logic</text>
+
+  <!-- HOLDERS -->
+  <rect x="900" y="120" width="240" height="90" rx="10" class="node" stroke="#4fd1ff"/>
+  <text x="1020" y="152" text-anchor="middle" class="label">TOKEN HOLDERS</text>
+  <text x="1020" y="172" text-anchor="middle" class="pct">50%</text>
+
+  <!-- FEE RECIPIENT -->
+  <rect x="900" y="410" width="240" height="90" rx="10" class="node" stroke="#ff5fa2"/>
+  <text x="1020" y="442" text-anchor="middle" class="label">FEE RECIPIENT</text>
+  <text x="1020" y="462" text-anchor="middle" class="pct" fill="#ff5fa2">50%</text>
+
+  <!-- static connective lines -->
+  <path d="M200,310 L280,310" class="flow" marker-end="url(#arrow)"/>
+  <path d="M480,310 L560,310" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- animated flow to holders -->
+  <path id="pathHolders" d="M780,290 C 850,250 850,180 900,165" class="flow dash">
+    <animate attributeName="stroke-dashoffset" from="160" to="0" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M780,290 C 850,250 850,180 900,165" class="flow" opacity="0" marker-end="url(#arrow)"/>
+
+  <!-- animated flow to recipient -->
+  <path id="pathRecip" d="M780,330 C 850,370 850,440 900,455" class="flowB dash">
+    <animate attributeName="stroke-dashoffset" from="160" to="0" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M780,330 C 850,370 850,440 900,455" class="flowB" opacity="0" marker-end="url(#arrowP)"/>
+
+  <!-- moving fee packet dots -->
+  <circle r="5" fill="#4fd1ff">
+    <animateMotion dur="1.6s" repeatCount="indefinite" path="M780,290 C 850,250 850,180 900,165"/>
+  </circle>
+  <circle r="5" fill="#ff5fa2">
+    <animateMotion dur="1.6s" repeatCount="indefinite" path="M780,330 C 850,370 850,440 900,455"/>
+  </circle>
+
+  <!-- trade packet moving into router -->
+  <circle r="5" fill="#ffffff">
+    <animateMotion dur="1.2s" repeatCount="indefinite" path="M120,310 L670,310"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="670" y="400" text-anchor="middle" class="sub">every swap generates a fee → PAIDBALL splits it instantly, on-chain, no custody</text>
+
+  <!-- title -->
+  <text x="20" y="40" fill="#ffffff" font-size="20" font-weight="700">PAIDBALL — fee flow</text>
+  <text x="20" y="62" fill="#666" font-size="12">trade → capture → split → distribute</text>
+</svg>

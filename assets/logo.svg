@@ -1,0 +1,63 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ballGrad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="55%" stop-color="#0c0c0c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- outer pulsing glow ring -->
+  <circle cx="200" cy="200" r="178" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.55" filter="url(#glow)">
+    <animate attributeName="r" values="176;182;176" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.35;0.75;0.35" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ball body -->
+  <circle cx="200" cy="200" r="168" fill="url(#ballGrad)" stroke="#f5f5f5" stroke-width="2.5"/>
+
+  <!-- rotating sheen highlight -->
+  <g>
+    <ellipse cx="140" cy="120" rx="55" ry="90" fill="url(#sheen)" transform="rotate(-25 140 120)">
+      <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="14s" repeatCount="indefinite" additive="sum"/>
+    </ellipse>
+  </g>
+
+  <!-- P / bolt glyph (PAIDBALL mark) -->
+  <g fill="#f7f7f7" filter="url(#glow)">
+    <path d="
+      M 150 300
+      L 150 258
+      L 178 258
+      L 178 220
+      L 150 220
+      L 150 130
+      L 232 130
+      L 232 158
+      L 204 158
+      L 204 178
+      L 258 178
+      C 300 178 300 250 258 250
+      L 204 250
+      L 204 300
+      Z
+    "/>
+  </g>
+
+  <!-- inner ring accent -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1">
+    <animate attributeName="stroke-opacity" values="0.05;0.25;0.05" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>
